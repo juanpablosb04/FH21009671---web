@@ -48,7 +48,7 @@ namespace TuProyecto.Models
 }
 ```
 
-
+- Necesito que a la siguiente tabla: 
 
 ```html
 <!DOCTYPE html>
@@ -75,16 +75,18 @@ namespace TuProyecto.Models
 </body>
 </html>
 ```
-Agrega estilos este HTML, algo basico y moderno, tambien necesito que crees como una tabla con esta estructura para ahorrar algo de tiempo: 
+Le coloques estilos, algo basico y moderno, tambien necesito que crees como una tabla con esta estructura para ahorrar algo de tiempo: 
 
-	Bin	Oct	Dec	Hex
-a	00001010	12	10	A
-b	00000011	3	3	3
-a AND b	10	2	2	2
-a OR b	1011	13	11	B
-a XOR b	1001	11	9	9
-a + b	1101	15	13	D
-a • b	11110	36	30	1E
+| Operación | Binario   | Octal | Decimal | Hexadecimal |
+|-----------|-----------|-------|---------|-------------|
+| a         | 00001010  | 12    | 10      | A           |
+| b         | 00000011  | 3     | 3       | 3           |
+| a AND b   | 10        | 2     | 2       | 2           |
+| a OR b    | 1011      | 13    | 11      | B           |
+| a XOR b   | 1001      | 11    | 9       | 9           |
+| a + b     | 1101      | 15    | 13      | D           |
+| a • b     | 11110     | 36    | 30      | 1E          |
+
 
 ```html
 <style>
@@ -253,6 +255,7 @@ a • b	11110	36	30	1E
 
     return View(model);
 ```
+Cambios necesarios en el HTML:
 
 ```html
 <tr>
