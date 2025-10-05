@@ -1,0 +1,202 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model Practica_Programada_2.Models.BinaryInputModel
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Binario</title>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .textColor {
+            color: #003366;
+            font-weight: bold;
+        }
+
+        .container {
+            background-color: #d6eaff;
+            border-radius: 12px;
+            padding: 30px;
+            width: 500px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+        }
+
+        form div {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #002244;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #99ccee;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #0066cc;
+            color: #fff;
+            font-size: 1rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #004c99;
+        }
+
+        table {
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #004c99;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #0066cc;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #e6f2ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Practica Programada 2 - Juan Pablo SB</h1>
+
+        <form asp-action="Index" method="post">
+            <div>
+                <label for="a">a</label>
+                <input asp-for="A" />
+                <span asp-validation-for="A" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label for="b">b</label>
+                <input asp-for="B" />
+                <span asp-validation-for="B" class="text-danger"></span>
+            </div>
+
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+
+        @section Scripts {
+            @{
+                await Html.RenderPartialAsync("_ValidationScriptsPartial");
+            }
+        }
+
+        @if (ViewBag.A_Bin != null && ViewBag.B_Bin != null)
+        {
+            <table border="1" class="table">
+                <thead>
+                    <tr>
+                        <th class="textColor">Operación</th>
+                        <th class="textColor">Bin</th>
+                        <th class="textColor">Oct</th>
+                        <th class="textColor">Dec</th>
+                        <th class="textColor">Hex</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>a</td>
+                        <td>@ViewBag.A_Bin</td>
+                        <td>@ViewBag.A_Oct</td>
+                        <td>@ViewBag.A_Dec</td>
+                        <td>@ViewBag.A_Hex</td>
+                    </tr>
+                    <tr>
+                        <td>b</td>
+                        <td>@ViewBag.B_Bin</td>
+                        <td>@ViewBag.B_Oct</td>
+                        <td>@ViewBag.B_Dec</td>
+                        <td>@ViewBag.B_Hex</td>
+                    </tr>
+                    <tr>
+                        <td>a AND b</td>
+                        <td>@ViewBag.AND_Bin</td>
+                        <td>@ViewBag.AND_Oct</td>
+                        <td>@ViewBag.AND_Dec</td>
+                        <td>@ViewBag.AND_Hex</td>
+                    </tr>
+                    <tr>
+                        <td>a OR b</td>
+                        <td>@ViewBag.OR_Bin</td>
+                        <td>@ViewBag.OR_Oct</td>
+                        <td>@ViewBag.OR_Dec</td>
+                        <td>@ViewBag.OR_Hex</td>
+                    </tr>
+                    <tr>
+                        <td>a XOR b</td>
+                        <td>@ViewBag.XOR_Bin</td>
+                        <td>@ViewBag.XOR_Oct</td>
+                        <td>@ViewBag.XOR_Dec</td>
+                        <td>@ViewBag.XOR_Hex</td>
+                    </tr>
+                    <tr>
+                        <td>a + b</td>
+                        <td>@ViewBag.SUM_Bin</td>
+                        <td>@ViewBag.SUM_Oct</td>
+                        <td>@ViewBag.SUM_Dec</td>
+                        <td>@ViewBag.SUM_Hex</td>
+                    </tr>
+                    <tr>
+                        <td>a * b</td>
+                        <td>@ViewBag.MUL_Bin</td>
+                        <td>@ViewBag.MUL_Oct</td>
+                        <td>@ViewBag.MUL_Dec</td>
+                        <td>@ViewBag.MUL_Hex</td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+
+</html>
