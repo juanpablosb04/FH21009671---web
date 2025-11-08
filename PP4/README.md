@@ -1,4 +1,4 @@
-# Practica Programada 3
+# Practica Programada 4
 
 ## Juan Pablo Solís Benamburg - Carnet: FH21009671
 
@@ -20,7 +20,7 @@ dotnet run
 ```
 
 ### Prompts
-- Necesito crear dbContext del problema planteado previamente
+- Necesito crear dbContext del problema planteado previamente.
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
@@ -61,7 +61,7 @@ namespace YourProject
 
 ```
 
-- Ahora necesito importar el CSV a la base de datos (es decir books.db)
+- Ahora necesito importar el CSV a la base de datos (es decir books.db).
 
 ```csharp
 ✅ Paso 1: Modelos
